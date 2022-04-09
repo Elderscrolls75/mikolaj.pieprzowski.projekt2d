@@ -1454,6 +1454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
   speed: 0
+  lifeLength: 0
 --- !u!1 &5037145684177724346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,6 +1890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
   speed: 0
+  lifeLength: 0
 --- !u!1 &5730488603787266941
 GameObject:
   m_ObjectHideFlags: 0
@@ -13091,6 +13093,7 @@ GameObject:
   - component: {fileID: 4796513002827924567}
   - component: {fileID: 7866521880373060094}
   - component: {fileID: 8355906359272807198}
+  - component: {fileID: -5702062344335050706}
   m_Layer: 6
   m_Name: PlayerController
   m_TagString: Player
@@ -13177,6 +13180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 8355906359272807198}
+  healthSystem: {fileID: -5702062344335050706}
   speed: 70
   rb2d: {fileID: 5439097503431088161}
 --- !u!114 &7866521880373060094
@@ -13208,3 +13212,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd5b3fb14c291f44ba24d9b64f578c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5702062344335050706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8474490070358389241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30036bbd265c6834dac98ebf121c0ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10

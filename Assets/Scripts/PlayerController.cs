@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] InputManager inputManager;
+    [SerializeField] HealthSystem healthSystem;
     [SerializeField] float speed;
     [SerializeField] Rigidbody2D rb2d;
 
@@ -22,8 +23,15 @@ public class PlayerController : MonoBehaviour
         cameraBounds = new Rect(bottomLeftPosition.x, bottomLeftPosition.y,
         uppeerRigthPosition.x - bottomLeftPosition.x,
         uppeerRigthPosition.y - bottomLeftPosition.y);
+
+        healthSystem.OnZeroHealth += HealthSystem_OnZeroHealth;    
     }
 
+
+    private void HealthSystem_OnZeroHealth()
+    {
+        Destroy(gameObject);
+    }
     private void FixedUpdate() 
     {
         Vector2 movementVector = new Vector2(inputManager.HorizontalInput * speed,

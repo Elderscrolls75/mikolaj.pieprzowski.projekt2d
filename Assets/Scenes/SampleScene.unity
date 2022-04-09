@@ -140,6 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace649115133892419a01ad481f2752b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb2d: {fileID: 0}
+  speed: 0
+  lifeLength: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +297,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace649115133892419a01ad481f2752b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb2d: {fileID: 0}
+  speed: 0
+  lifeLength: 0
 --- !u!1001 &312862910133119947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -301,6 +307,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5702062344335050706, guid: 3520bbe5a31e4284693ae02f04495f10, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 327125487325848148, guid: 3520bbe5a31e4284693ae02f04495f10, type: 3}
       propertyPath: m_Layer
       value: 6
