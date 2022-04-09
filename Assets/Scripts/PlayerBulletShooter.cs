@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerBulletShooter : MonoBehaviour
 {
     [SerializeField] InputManager inputManager;
-    [SerializeField] NormalBullet normalBulletPrefab;
+    [SerializeField] Bullet normalBulletPrefab;
     [SerializeField] Transform[] bulletsPositions;
 
     private void Update() 
@@ -20,8 +20,10 @@ public class PlayerBulletShooter : MonoBehaviour
     {
         foreach(var transformPosition in bulletsPositions)
         {
-            NormalBullet createBullet = Instantiate<NormalBullet>(normalBulletPrefab, 
+            Bullet createBullet = Instantiate<Bullet>(normalBulletPrefab, 
             transformPosition.position, Quaternion.identity);
+
+            createBullet.Shoot(Vector3.right);
         }
 
     }
