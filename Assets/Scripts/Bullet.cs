@@ -8,18 +8,26 @@ public class Bullet : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float lifeLength;
 
+    bool active;
     public void Shoot(Vector3 direction)
     {
         rb2d.AddForce(direction * speed, ForceMode2D.Impulse);
         Destroy(gameObject, lifeLength);
+        active = true;
     }
-
-    private void OnCollisionEnter2D(Collision2D other) 
+    
+    private void OnTriggerEnter2D(Collider2D other) 
     {
+        
         HealthSystem healthSystem = other.gameObject.GetComponent<HealthSystem>();
         if(healthSystem != null)
         {
-            healthSystem.DecreaseHP(5);
+            if(active == true)
+            {
+                healthSystem.DecreaseHP(5);
+            }
+            active = false;
         }   
+        Destroy(gameObject);
     }
 }

@@ -9,7 +9,7 @@ public class HealthSystem : MonoBehaviour
 
     [SerializeField] int maxHealth;
 
-    [SerializeField] int currentHealth;
+    int currentHealth;
     public int Health {get {return currentHealth;} }
 
     private void Awake() 

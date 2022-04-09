@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
 
         healthSystem.OnZeroHealth += HealthSystem_OnZeroHealth;    
     }
+        private void OnDestroy() 
+    {
+        healthSystem.OnZeroHealth -= HealthSystem_OnZeroHealth;     
+    }
 
 
     private void HealthSystem_OnZeroHealth()

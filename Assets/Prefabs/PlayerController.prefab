@@ -1419,6 +1419,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3203980438345862158}
   - component: {fileID: 393330900}
+  - component: {fileID: 8198999318229853230}
   m_Layer: 6
   m_Name: ShootingPositionRight
   m_TagString: Untagged
@@ -1441,6 +1442,21 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &393330900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900572277306377820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace649115133892419a01ad481f2752b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 0}
+  speed: 0
+  lifeLength: 0
+--- !u!114 &8198999318229853230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1855,6 +1871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3355704624500233454}
   - component: {fileID: 2067857908}
+  - component: {fileID: 4868674684700760850}
   m_Layer: 6
   m_Name: ShootingPositionLeft
   m_TagString: Untagged
@@ -1877,6 +1894,21 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2067857908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5117447278453306835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace649115133892419a01ad481f2752b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 0}
+  speed: 0
+  lifeLength: 0
+--- !u!114 &4868674684700760850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3137,9 +3169,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.7176471, g: 0.6324509, b: 0.03529412, a: 1}
+      maxColor: {r: 0.8207547, g: 0.2121573, b: 0.2121573, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4216,8 +4248,8 @@ ParticleSystem:
     gradient:
       serializedVersion: 2
       minMaxState: 1
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minColor: {r: 0.13980061, g: 0.9622642, b: 0.7870817, a: 1}
+      maxColor: {r: 0.754717, g: 0.01708791, b: 0.01708791, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4236,7 +4268,7 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 0
+        atime0: 14071
         atime1: 65535
         atime2: 0
         atime3: 0
@@ -8023,9 +8055,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.7176471, g: 0.63529414, b: 0.03529412, a: 1}
+      maxColor: {r: 0.81960785, g: 0.21176471, b: 0.21176471, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -13224,4 +13256,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30036bbd265c6834dac98ebf121c0ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 20
