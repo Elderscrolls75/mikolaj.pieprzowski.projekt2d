@@ -8,7 +8,7 @@ public class StateMachine : MonoBehaviour
 
     private void Start()
     {
-        EnterState(new GameState());
+        EnterState(new MenuState());
     }
 
     private void Update() 
@@ -31,5 +31,10 @@ public class StateMachine : MonoBehaviour
         currentState = stateToEnter;
 
         currentState.EnterState(this);
+    }
+
+    public void OnGameStartButtonPressed()
+    {
+        EnterState(new GameState());
     }
 }

@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         healthSystem.OnZeroHealth -= HealthSystem_OnZeroHealth;     
     }
-    bool isPlayerDead;
+    bool isPlayerDead = true;
 
     public void Respawn()
     {
@@ -68,9 +68,7 @@ public class PlayerController : MonoBehaviour
     private void HealthSystem_OnZeroHealth()
     {
         OnPlayerDied?.Invoke(); 
-        playerObject.SetActive(false);
-        isPlayerDead = true;
-        SwitchPlayerCollider(false);
+        DisablePlayer();
     }
     private void FixedUpdate() 
     {
@@ -99,6 +97,13 @@ public class PlayerController : MonoBehaviour
         {
             collider.enabled = state;
         }
+    }
+
+    public void DisablePlayer()
+    {
+        playerObject.SetActive(false);
+        isPlayerDead = true;
+        SwitchPlayerCollider(false);
     }
 
 }
