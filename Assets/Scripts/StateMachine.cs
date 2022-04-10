@@ -33,8 +33,5 @@ public class StateMachine : MonoBehaviour
         currentState.EnterState(this);
     }
 
-    public void OnGameStartButtonPressed()
-    {
-        EnterState(new GameState());
-    }
+
 }

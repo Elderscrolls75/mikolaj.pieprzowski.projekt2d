@@ -27,6 +27,8 @@ public class GameState : BaseState
         {
             bullet.DestroyBullets();
         }
+
+        UIManager.Instance.ShowHUD();
     }
 
     public override void UpdateState()
