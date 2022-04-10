@@ -12,6 +12,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxInterval;
     float timer = 1f;
 
+    float despawnPosition;
+
+    public void Initialize(float leftScreenEdgePosition)
+    {
+        despawnPosition = leftScreenEdgePosition;
+    }
+
     private void Awake() 
     {
         healthSystem.OnZeroHealth += HealthSystem_OnZeroHealth;  
@@ -26,6 +33,11 @@ public class Enemy : MonoBehaviour
         }   
 
         timer -= Time.deltaTime; 
+
+        if(transform.position.x < despawnPosition -3)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Shoot()
@@ -40,6 +52,11 @@ public class Enemy : MonoBehaviour
     }
 
     private void HealthSystem_OnZeroHealth()
+    {
+        DestroyEnemy();
+    }
+
+    private void DestroyEnemy()
     {
         Destroy(gameObject);
     }
