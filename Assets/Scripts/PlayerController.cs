@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
+    public event System.Action OnPlayerDied;
     [SerializeField] InputManager inputManager;
     [SerializeField] HealthSystem healthSystem;
     [SerializeField] float speed;
     [SerializeField] Rigidbody2D rb2d;
+    [SerializeField] GameObject playerObject;
+
+    [SerializeField] Collider2D[] shipColliders;
 
     Camera activeCamera;
     Rect cameraBounds;
+
+    Vector3 spawnPosition;
 
     private void Start() 
     {
@@ -30,14 +37,48 @@ public class PlayerController : MonoBehaviour
     {
         healthSystem.OnZeroHealth -= HealthSystem_OnZeroHealth;     
     }
+    bool isPlayerDead;
+
+    public void Respawn()
+    {
+        transform.position = spawnPosition;
+        healthSystem.ResetHP();
+        playerObject.SetActive(true);
+
+        isPlayerDead = false;
+        SwitchPlayerCollider(true);
+    }
+
+
+    void Awake()
+    {
+        if(Instance==null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        spawnPosition = transform.position;
+    }
 
 
     private void HealthSystem_OnZeroHealth()
     {
-        Destroy(gameObject);
+        OnPlayerDied?.Invoke(); 
+        playerObject.SetActive(false);
+        isPlayerDead = true;
+        SwitchPlayerCollider(false);
     }
     private void FixedUpdate() 
     {
+        if(isPlayerDead==true)
+        {
+            return;
+        }
+
         Vector2 movementVector = new Vector2(inputManager.HorizontalInput * speed,
         inputManager.VerticallInput * speed);
 
@@ -51,4 +92,13 @@ public class PlayerController : MonoBehaviour
         Mathf.Clamp(transform.position.y, cameraBounds.yMin, cameraBounds.yMax),
         transform.position.z);    
     }
+
+    void SwitchPlayerCollider(bool state)
+    {
+        foreach(var collider in shipColliders)
+        {
+            collider.enabled = state;
+        }
+    }
+
 }

@@ -8,7 +8,7 @@ public class StateMachine : MonoBehaviour
 
     private void Start()
     {
-        EnterState(new DemoState());
+        EnterState(new GameState());
     }
 
     private void Update() 
@@ -21,7 +21,7 @@ public class StateMachine : MonoBehaviour
         currentState.ExitState();    
     }
 
-    void EnterState(BaseState stateToEnter)
+    public void EnterState(BaseState stateToEnter)
     {
         if(currentState!=null)
         {
