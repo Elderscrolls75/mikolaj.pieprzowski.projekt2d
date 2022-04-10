@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public event System.Action OnPlayerDied;
     [SerializeField] InputManager inputManager;
     [SerializeField] HealthSystem healthSystem;
+    public HealthSystem HealthSystem {get {return healthSystem;} }
     [SerializeField] float speed;
     [SerializeField] Rigidbody2D rb2d;
     [SerializeField] GameObject playerObject;
